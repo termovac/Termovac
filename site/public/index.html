@@ -18,8 +18,18 @@
         rel="stylesheet"> -->
 </head>
 
+<div id="abaSelecao">
+    <div class="abaClicavel" onclick="location.href='sobrenos.html';">Sobre nós</div>
+    <br>
+    <div class="abaClicavel" onclick="location.href='login.html';">Login</div>
+    <br>
+    <div class="abaClicavel" onclick="location.href='cadastro.html';">Cadastro</div>
+    <br>
+    <div class="abaClicavel" onclick="location.href='simulador.html';">Simulador</div>
+</div>
 <body>
     <div class="header">
+        <div id="quadrado" onclick="abaDireita()"></div>
         <div class="container">
             <h1 class="titulo"><span style="color: #00ffc8">t</span><span style="color: #44e6ff">Vac</span></h1>
             <ul class="navbar">
@@ -43,10 +53,9 @@
         </div>
     </div>
 
-    <div id="espacamento">
+    <div id="espacamento"></div>
 
-    </div>
-
+    <div id="pagina" onclick="abaDireitaFechar()">
     <div class="banner">
         <div class="cont">
             <div id="img"><img src="./assets/1.jpg" alt=""></div>
@@ -108,10 +117,11 @@
                     <input name="message" id="in_mensagem" style="height: 150px" placeholder="Mensagem*">
                     <div class="texto1">*Itens obrigatórios</div> <br>
                     <button class="btnContato" onclick="enviar()">Enviar</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        </div>
     </div>
 
     <!--footer inicio-->
@@ -126,7 +136,7 @@
 </body>
 
 </html>
-
+<script type="text/javascript" src="js/responsive.js"></script>
 <script>
     document.querySelector(".cont")
         .addEventListener("wheel", function () {
