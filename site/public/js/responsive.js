@@ -4,7 +4,6 @@ let height = 0
 
 const classeNavbar = document.querySelector('.navbar');
 const classeTitulo = document.querySelector('.footer .container .titulo');
-const classeNormal = document.querySelectorAll('.normal');
 
 calcularDimensoes();
 
@@ -29,6 +28,10 @@ function redimensionarHeader() {
         classeTitulo.innerHTML = `<span style="color: #00ffc8">t</span><span style="color: #44e6ff">Vac®<br>
         <span class="texto_footer" style="color:black">"O calor é para todos, o frio para poucos. Mas o controle é nosso!"</span>
     </span>`
+    }
+
+    if (typeof redimensionarSettings == 'function') { 
+        redimensionarSettings();
     }
 }
 

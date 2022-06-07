@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
@@ -58,10 +58,10 @@
     <div id="pagina" onclick="abaDireitaFechar()">
     <div class="banner">
         <div class="cont">
-            <div id="img"><img src="./assets/1.jpg" alt=""></div>
-            <div id="img"><img src="./assets/2.jpg" alt=""></div>
-            <div id="img"><img src="./assets/3.jpg" alt=""></div>
-            <div id="img"><img src="./assets/4.jpg" alt=""></div>
+            <div class="img"><img id="imagem1"></div>
+            <div class="img"><img id="imagem2"></div>
+            <div class="img"><img id="imagem3"></div>
+            <div class="img"><img id="imagem4"></div>
         </div>
     </div>
 
@@ -101,26 +101,20 @@
     </div>
 
     <div class="social_exp">
-        <div class="container">
-            <div class="social_cont">
-                <div class="conteudo">
-                    <img src="./assets/CONTATO.png">
-                </div>
-
-                <div class="conteudo2">
-                    <form action="https://api.staticforms.xyz/submit" method="post">
-                        <input type="hidden" name="accessKey" value="0ddbe837-00db-4ca1-a2b8-ff2a9a7a958e">
-                        <input type="hidden" name="redirectTo" value="http://localhost:3333/index.html">
-                    <b style="text-align: center">Entre em contato.</b><br>
+        <div class="social_cont">
+            <img src="./assets/CONTATO.png">
+            <div class="conteudo2">
+                <form action="https://api.staticforms.xyz/submit" method="post">
+                    <input type="hidden" name="accessKey" value="0ddbe837-00db-4ca1-a2b8-ff2a9a7a958e">
+                    <input type="hidden" name="redirectTo" value="http://localhost:3333/index.html">
+                    <b style="text-align: center">Entre em contato</b><br>
                     <input type="text" name="name" id="in_nome" placeholder="Nome Completo*"><br>
                     <input type="text" name="email" id="in_email" placeholder="E-mail*"><br>
                     <input name="message" id="in_mensagem" style="height: 150px" placeholder="Mensagem*">
                     <div class="texto1">*Itens obrigatórios</div> <br>
                     <button class="btnContato" onclick="enviar()">Enviar</button>
-                    </div>
-                </div>
+                </form>
             </div>
-        </div>
         </div>
     </div>
 
@@ -138,6 +132,32 @@
 </html>
 <script type="text/javascript" src="js/responsive.js"></script>
 <script>
+    redimensionarSettings();
+    function redimensionarSettings() {
+        const classBoxes = document.querySelector(".social .container .boxes")
+        const classSocial_cont = document.querySelector(".social_cont")
+
+        if (width >= 700) {
+            imagem1.src = './assets/1.jpg'
+            imagem2.src = './assets/2.jpg'
+            imagem3.src = './assets/3.jpg'
+            imagem4.src = './assets/4.jpg'
+            classSocial_cont.style.flexDirection = 'row'
+        } else if (width < 700) {
+            imagem1.src = './assets/1mobile.jpg'
+            imagem2.src = './assets/2mobile.jpg'
+            imagem3.src = './assets/3mobile.jpg'
+            imagem4.src = './assets/4mobile.jpg'
+            classSocial_cont.style.flexDirection = 'column'
+        }
+        if (width >= 1000) {
+            classBoxes.style.flexDirection = 'row'
+        } else if (width < 1000) {
+            classBoxes.style.flexDirection = 'column'
+        }
+    }
+</script>
+<script>
     document.querySelector(".cont")
         .addEventListener("wheel", function () {
             if (event.deltaY > 0) {
@@ -147,8 +167,6 @@
                 event.target.scrollBy(1280, 0)
             }
         })
-
-
 
     function enviar() {
         if(in_email.value != "" || in_nome.value != "" || in_mensagem.value != "") {
