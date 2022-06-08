@@ -3,6 +3,7 @@ let width = 0
 let height = 0
 
 const classeNavbar = document.querySelector('.navbar');
+const classeFooter = document.querySelector('.footer');
 const classeTitulo = document.querySelector('.footer .container .titulo');
 
 calcularDimensoes();
@@ -21,13 +22,15 @@ function redimensionarHeader() {
         classeNavbar.style.display = 'none'
         quadrado.style.display = 'flex'
         classeTitulo.innerHTML = `<span style="color: #00ffc8">t</span><span style="color: #44e6ff">Vac®</span>`
+        classeFooter.style.height = '15vh'
     }
     if (width >= 1000) {
         classeNavbar.style.display = 'flex'
         quadrado.style.display = 'none'
         classeTitulo.innerHTML = `<span style="color: #00ffc8">t</span><span style="color: #44e6ff">Vac®<br>
         <span class="texto_footer" style="color:black">"O calor é para todos, o frio para poucos. Mas o controle é nosso!"</span>
-    </span>`
+        </span>`
+        classeFooter.style.height = '20vh'
     }
 
     if (typeof redimensionarSettings == 'function') { 

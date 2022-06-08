@@ -63,7 +63,7 @@
         Simulador financeiro
     </div>
     
-    <div class="container">
+    <div class="container3">
         <div id="div_duo">
             <div id="div_imagem">
                 <img id="imagem" src="./assets/simulador.png" alt="">
@@ -96,7 +96,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container3">
         <div id="texto_conta"><span id="config_texto" style="width: 100%;">
             Através dos dados requisitados, a TermoVac pôde realizar uma estimativa de quanto nossos clientes poderiam ter suas perdas drasticamente reduzidas com nossos serviços. Neste caso, obtemos os valores das vacinas e os dados que se referiam ao transporte das mesmas. <br><br>
             Dessa maneira, pudemos estipular as perdas que você, cliente, possui em média, e, por meio de uma taxa estudada por nossa equipe, reduzimos suas perdas em 70% para que elas fossem semelhantes às obtidas conosco.</span>
@@ -105,13 +105,13 @@
     </div>
 
     <div id="box_conta">
-    <div class="container">
+    <div class="container3">
         <div id="texto_perda">
-            adsads
+            erro
         </div>
-       
+
         <div id="texto_economia">
-            asddasdas
+            erro
         </div>
     </div>
     </div>
@@ -133,7 +133,7 @@
             texto_perda.innerHTML = `Desperdício diário sem nossos serviços em R$: ${desperdicio.toFixed(2)}`
             texto_economia.innerHTML = `Desperdício diário com nossos serviços em R$: ${economia.toFixed(2)}`
             porcentagem_texto.innerHTML = `<b style="color:red">Você perde ${((desperdicio)/(vacina*quantidade*viagem)*100).toFixed(2)}% do valor total dos produtos. <span style="color:green">Conosco, deixaria de perder ${(((desperdicio)/(vacina*quantidade*viagem)*100).toFixed(2))-(((economia)/(vacina*quantidade*viagem)*100).toFixed(2))}%.</span></b>`
-            window.scrollTo({ top: 700, behavior: 'smooth' });
+            window.scrollTo({ top: 650, behavior: 'smooth' });
             } else {
                 alert("Insira os valores correspondentes.")
             }
@@ -158,4 +158,18 @@
 </body>
 
 </html>
+<script>
+    function redimensionarSettings() {
+        if (width < 1100) {
+            div_imagem.style.display = 'none'
+        } else if (width >= 1100) {
+            div_imagem.style.display = 'block'
+        }
+        if (width < 800) {
+            texto.style.fontSize = '15px'
+        } else if (width >= 800) {
+            texto.style.fontSize = '23px'
+        }
+    }
+</script>
 <script type="text/javascript" src="js/responsive.js"></script>

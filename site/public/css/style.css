@@ -539,12 +539,18 @@ input {
   background-repeat: no-repeat;
 }
 
+.container3 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #div_duo {
   display: flex;
   background-color: white;
   width: 75%;
-  margin: auto;
-  margin-top: 2%;
+  min-width: 400px;
   border: solid 2px black;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -574,10 +580,12 @@ input {
 
 #texto_conta {
   display: flex;
+  min-width: 400px;
+  max-width: 1000px;
+  margin-top: 20px;
   /* width: 30%; */
   /* height: 366px; */
   background-color: white;
-  margin: 3% 12.5%;
   /* margin-top: 3%; */
   padding: 19px 51px 11px 40px;
   font-size: 20px;
@@ -612,7 +620,6 @@ input {
   background-color: white;
   padding: 4%;
   border: #000000 1px solid;
-  height: 2vh;
   margin-top: 4%;
   color: red;
   display: none;
@@ -622,7 +629,6 @@ input {
   background-color: white;
   padding: 4%;
   border: #000000 1px solid;
-  height: 2vh;
   margin-top: 4%;
   color: green;
   display: none;

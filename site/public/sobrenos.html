@@ -15,7 +15,23 @@
     <!-- <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet"> -->
+        <script>
+            let abaAberta = 0
+            let width = 0
+            let height = 0
+let baixo = false
+calcularDimensoes();
 
+function calcularDimensoes() {
+    width  = window.innerWidth || document.documentElement.clientWidth || 
+    document.body.clientWidth;
+    height = window.innerHeight|| document.documentElement.clientHeight|| 
+    document.body.clientHeight;
+    if (baixo == true) {
+redimensionarHeader();
+    }
+}
+        </script>
 </head>
 
 <div id="abaSelecao">
@@ -91,7 +107,7 @@
 
 
         <!-- Carrosel -->
-        <div class="swiper mySwiper carrosel" id="Sobre-nos">
+        <div class="swiper mySwiper carrosel" id="Sobre_nos">
             <div class="carrosel_container">
                 <div class="carrosel_content">
                     <!--Slide 1-->
@@ -235,7 +251,67 @@
 </body>
 
 </html>
-<script type="text/javascript" src="js/responsive.js"></script>
+<script>
+baixo = true
+
+const classeNavbar = document.querySelector('.navbar');
+const classeTitulo = document.querySelector('.footer .container .titulo');
+
+function redimensionarSettings() {
+        const classeBanner_sobre2 = document.querySelector('.banner_sobre2');
+        if (width < 1000) {
+            classeBanner_sobre2.style.display = 'none'
+        } else if (width >= 1000) {
+            classeBanner_sobre2.style.display = 'block'
+        }
+
+}
+const classeFooter = document.querySelector('.footer');
+
+function redimensionarHeader() {
+    if (width < 1000) {
+        classeNavbar.style.display = 'none'
+        quadrado.style.display = 'flex'
+        classeTitulo.innerHTML = `<span style="color: #00ffc8">t</span><span style="color: #44e6ff">Vac®</span>`
+        classeFooter.style.height = '15vh'
+    }
+    if (width >= 1000) {
+        classeNavbar.style.display = 'flex'
+        quadrado.style.display = 'none'
+        classeTitulo.innerHTML = `<span style="color: #00ffc8">t</span><span style="color: #44e6ff">Vac®<br>
+        <span class="texto_footer" style="color:black">"O calor é para todos, o frio para poucos. Mas o controle é nosso!"</span>
+        </span>`
+        classeFooter.style.height = '20vh'
+    }
+
+    if (typeof redimensionarSettings == 'function') { 
+        redimensionarSettings();
+    }
+}
+
+redimensionarHeader();
+
+window.addEventListener("resize", calcularDimensoes);
+
+function abaDireita() {
+    if (abaAberta == 0) {
+        pagina.style.filter = 'brightness(50%)'
+        abaSelecao.style.display = 'block'
+        abaAberta = 1
+    } else if (abaAberta == 1) {
+        pagina.style.filter = 'brightness(100%)'
+        abaSelecao.style.display = 'none'
+        abaAberta = 0
+    }
+}
+function abaDireitaFechar() {
+        if (abaAberta == 1) {
+        pagina.style.filter = 'brightness(100%)'
+        abaSelecao.style.display = 'none'
+        abaAberta = 0
+    }
+}
+</script>
 <script>
     // Carrosel
     var click = 1
