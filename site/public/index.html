@@ -112,8 +112,7 @@
                     <input type="text" name="email" id="in_email" placeholder="E-mail*"><br>
                     <input name="message" id="in_mensagem" style="height: 150px" placeholder="Mensagem*">
                     <div class="texto1">*Itens obrigatórios</div> <br>
-                    <button class="btnContato" onclick="enviar()">
-                        <a href="index.html">Enviar</a></button>
+                    <button class="btnContato" onclick="enviar()">Enviar</button>
                 </form>
             </div>
         </div>
@@ -171,7 +170,7 @@
 
     function enviar() {
         if(in_email.value != "" || in_nome.value != "" || in_mensagem.value != "") {
-            alert("E-mail enviado. Agradecemos o vosso contato")
+            alert("E-mail enviado. Agradecemos o vosso contato" +  window.location.reload())
         } else {
             alert("Preencha os campos corretamente.")
         }
