@@ -27,7 +27,7 @@
     <br>
     <div class="abaClicavel" onclick="location.href='cadastro.html';">Cadastro</div>
 </div>
-<body>
+<body style="width: 100vw; max-width: 100vw;">
 
     <!--header inicio-->
     <div class="header">
@@ -118,6 +118,9 @@
 </html>
 
 <script>
+    texto_perda.style.display = 'block'
+    texto_economia.style.display = 'block'
+    texto_conta.style.display = 'block'
     function desperdicio() {
         var vacina = Number(sel_vacinas.value)
         var quantidade = Number(in_quantidade.value)
