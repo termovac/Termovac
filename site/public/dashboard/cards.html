@@ -130,15 +130,15 @@
         obterdados(3);
         obterdados(4);
 
-        function sendData() {
-			var http = new XMLHttpRequest();
-			http.open('POST', 'http://localhost:3000/api/sendData', false);
-			http.send(null);
-		}
+        // function sendData() {
+		// 	var http = new XMLHttpRequest();
+		// 	http.open('POST', 'http://localhost:3000/api/sendData', false);
+		// 	http.send();
+		// }
 
-        setInterval(() => {
-			sendData();
-		}, 2000);
+        // setInterval(() => {
+		// 	sendData();
+		// }, 2000);
         setTimeout(atualizacaoPeriodica, 5000);
     }
 
@@ -170,7 +170,7 @@
 
     function alertar(temperatura, idTransporte) {
         var limites = {
-            muito_quente: 10,
+            muito_quente: 50,
             quente: 6,
             ideal: 0,
             frio: -40,
