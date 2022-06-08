@@ -150,12 +150,13 @@
                     resposta.json().then(resposta => {
 
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        console.log("chamar temperatura" + resposta[0].lm35_temperatura);
 
                         var dados = {
-                            temperatura: resposta[0].temperatura,
+                            temperatura: resposta[0].lm35_temperatura,
                         }
 
-                        alertar(resposta[0].temperatura, idTransporte);
+                        alertar(resposta[0].lm35_temperatura, idTransporte);
                     });
                 } else {
 

@@ -193,7 +193,7 @@
                         id: 'y-temperatura',
                         ticks: {
                             beginAtZero: true,
-                            max: 100,
+                            max: 50,
                             min: -100
                         },
                         gridLines: {
@@ -205,15 +205,15 @@
             }
         });
 
-        function sendData() {
-            var http = new XMLHttpRequest();
-            http.open('POST', 'http://localhost:3000/api/sendData', false);
-            http.send(null);
-        }
+        // function sendData() {
+        //     var http = new XMLHttpRequest();
+        //     http.open('POST', 'http://localhost:3000/api/sendData', false);
+        //     http.send(null);
+        // }
 
-        setInterval(() => {
-            sendData();
-        }, 2000);
+        // setInterval(() => {
+        //     sendData();
+        // }, 2000);
 
         //Atualiza os dados de 5 em 5 segundos
         setTimeout(() => atualizarGrafico(idTransporte, dados), 2000);
