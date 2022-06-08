@@ -170,7 +170,8 @@
 
     function enviar() {
         if(in_email.value != "" || in_nome.value != "" || in_mensagem.value != "") {
-            alert("E-mail enviado. Agradecemos o vosso contato" +  window.location.reload())
+            alert("E-mail enviado. Agradecemos o vosso contato")
+            window.location.reload()
         } else {
             alert("Preencha os campos corretamente.")
         }
