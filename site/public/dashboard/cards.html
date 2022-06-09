@@ -21,9 +21,10 @@
 <body onload="validarSessao(), atualizacaoPeriodica()">
 
     <div class="janela">
+        <div class="header-left-global">
 
 
-        <div class="header-left dash-header">
+        <div class="header-left">
 
             <h1 class="titulo"><span style="color: #00ffc8">t</span><span style="color: #44e6ff">Vac</span></h1>
 
@@ -35,20 +36,20 @@
                 <h3>Transportes</h3>
             </div>
 
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
+            <div class="btn-nav-white" onclick="location.href='./dashboard.html'" style="cursor: pointer;">
+                <a>
                     <h3>Gráficos</h3>
                 </a>
             </div>
 
-            <div class="btn-nav-white">
-                <a href="./mural.html">
+            <div class="btn-nav-white" onclick="location.href='./mural.html'" style="cursor: pointer;">
+                <a>
                     <h3>Atividades</h3>
                 </a>
             </div>
 
-            <div class="btn-nav-white">
-                <a href="https://app.pipefy.com/public/form/UzQ-70bw">
+            <div class="btn-nav-white" onclick="location.href='https://app.pipefy.com/public/form/UzQ-70bw'" style="cursor: pointer;">
+                <a>
                 <h3>Suporte</h3>
                 </a>
             </div>
@@ -58,6 +59,9 @@
             </div>
 
         </div>
+        <div id="quadradoDash" onclick="abrir()"></div>
+    </div>
+
 
         <div class="dash">
             <div class="regua">
@@ -121,6 +125,68 @@
 
 
 </body>
+<script>
+    let screenMode = 1
+    let aberto = 0
+
+    const classeHeaderLeftGlobal = document.querySelector('.header-left-global');
+    const classeHeaderLeft = document.querySelector('.header-left');
+
+    function abrir() {
+        if (aberto == 0) {
+            classeHeaderLeftGlobal.style.left = '0'
+            aberto = 1
+        } else if (aberto == 1) {
+            if (screenMode == 0) {
+                classeHeaderLeftGlobal.style.left = '-60vw'
+            } else if (screenMode == 1) {
+                classeHeaderLeftGlobal.style.left = '-20vw'
+            }
+            aberto = 0
+        }
+    }
+
+    function redimensionarSettings() {
+        if (width < 1000) {
+            classeHeaderLeftGlobal.style.width = '65vw'
+            classeHeaderLeft.style.width = '60vw'
+            quadradoDash.style.marginLeft = '60vw'
+            if (aberto == 0) {
+                classeHeaderLeftGlobal.style.left = '-60vw'
+            }
+            screenMode = 0
+        } else if (width >= 1000) {
+            classeHeaderLeftGlobal.style.width = '25vw'
+            classeHeaderLeft.style.width = '20vw'
+            quadradoDash.style.marginLeft = '20vw'
+            if (aberto == 0) {
+                classeHeaderLeftGlobal.style.left = '-20vw'
+            }
+            screenMode = 1
+        }
+    }
+</script>
+<script>
+let width = 0
+let height = 0
+
+function calcularDimensoes() {
+    width  = window.innerWidth || document.documentElement.clientWidth || 
+    document.body.clientWidth;
+    height = window.innerHeight|| document.documentElement.clientHeight|| 
+    document.body.clientHeight;
+    redimensionarSettings();
+}
+
+calcularDimensoes();
+
+window.addEventListener("resize", calcularDimensoes);
+
+if (typeof redimensionarSettings == 'function') { 
+    redimensionarSettings();
+}
+
+</script>
 
 <script>
 

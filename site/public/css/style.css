@@ -413,30 +413,36 @@ input {
   color: white;
 }
 
-.header-left {
+.header-left-global {
   position: fixed;
+  z-index: 999;
   top: 0;
   left: 0;
-  z-index: 999;
   height: 100vh;
-  width: 25%;
+  width: 25vw;
+  display: flex;
+  left: -20vw;
+  transition: 0.2s;
+}
+
+.header-left {
+  width: 20vw;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   border-right: 3px solid #32b9cd;
   background-color: #ffffff;
-  /* border: 3px solid pink; */
 }
 
 .dash-right {
   display: flex;
-  width: 75%;
+  width: 80vw;
   height: 100vh;
   height: fit-content;
   position: relative;
-  top: 0;
-  left: 25%;
+  top: 10vh;
 }
 
 .header-left h1 {
@@ -460,7 +466,7 @@ input {
 }
 
 .btn-nav {
-  width: 40%;
+  width: 70%;
   color: white;
   background-color: #32b9cd;
   border-radius: 5px;
@@ -469,7 +475,7 @@ input {
 }
 
 .btn-nav-white {
-  width: 40%;
+  width: 70%;
   background-color: white;
   border: 3px solid #32b9cd;
   border-radius: 5px;
@@ -1017,6 +1023,21 @@ html {
   background-position: center;
   position: absolute;
   right: 0;
+  cursor: pointer;
+  display: flex;
+}
+
+#quadradoDash {
+  margin-left: 20vw;
+  width: 10vh;
+  height: 10vh;
+  border-bottom-right-radius: 30px;
+  background-color: white;
+  background-image: url('https://icon-library.com/images/icon-bars/icon-bars-19.jpg');
+  background-size: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
   cursor: pointer;
   display: flex;
 }
