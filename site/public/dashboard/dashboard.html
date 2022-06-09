@@ -57,6 +57,16 @@
                     <h3>Suporte</h3>
                     </a>
                 </div>
+
+                <div class="btn-nav-white" onclick="location.href='../.././Apresentação/manual de instalação (sprint 3) - Grupo 2.pdf'" style="cursor: pointer;">
+                    <a>
+                    <h3>
+                        Manual de
+                        <br>
+                        Instalação
+                    </h3>
+                    </a>
+                </div>
     
                 <div class="btn-logout" onclick="limparSessao()">
                     <h3>Sair</h3>
@@ -67,7 +77,7 @@
         </div>
 
         <div class="dash">
-            <div class="regua">
+            <div class="regua" id="reguaCima">
                 <div class="item-regua perigo-frio">
                     <h4>Perigo ❄️</h4>
                     <h2>-80°C</h2>
@@ -152,9 +162,11 @@
         if (width < 800) {
             classeBtnsDash.style.flexDirection = 'column'
             classeGraph.style.width = '100%'
+            reguaCima.style.marginTop = '20vw'
         } else if (width >= 800) {
             classeBtnsDash.style.flexDirection = 'row'
             classeGraph.style.width = '80%'
+            reguaCima.style.marginTop = '0'
         }
     }
 </script>
